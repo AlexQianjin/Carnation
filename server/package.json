@@ -1,0 +1,31 @@
+{
+  "name": "server",
+  "version": "0.0.1",
+  "private": true,
+  "author": {
+    "name": "Alex Qin",
+    "email": "qianjin.qin@qq.com",
+    "url": "http://alexqin.cn"
+  },
+  "engines": {
+    "node": "10.0.0",
+    "npm": "6.0.1"
+  },
+  "scripts": {
+    "start": "node ./src/index.js",
+    "dev": "nodemon ./src/index.js",
+    "postinstall": "cd ./client && npm install && npm run build",
+    "heroku-prebuild": "echo This runs before Heroku installs your dependencies.",
+    "heroku-postbuild": "echo This runs afterwards."
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  }
+}
