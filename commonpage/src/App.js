@@ -22,7 +22,7 @@ class App extends React.Component {
 
     fetchProjectData() {
         fetch('http://localhost:5000/api/v1/project')
-            .then(function (response) {
+            .then(response => {
                 if (response.status >= 400) {
                     throw new Error('Bad response from server');
                 }
