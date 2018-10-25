@@ -13,4 +13,6 @@ router.get('/user', ctrlUsers.getUser);
 // router.post('/token', ctrlAuth.getToken);
 // router.get('/token', ctrlAuth.getTempToken);
 
+router.get('/project', ctrlUsers.getProject);
+
 module.exports = router;
