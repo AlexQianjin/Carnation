@@ -1,12 +1,27 @@
 # Carnation
-Node React Pug
+Node React 
 
 # How to run
-- install dependencies:
-```    
-     $ npm install
+## client
+- install dependencies and run the app:
 ```
-- run the app:
-```   
-     $ DEBUG=carnation:* npm start
+cd client/
+$ npm install 
+$ npm start
+```
+
+## commonpage
+- install dependencies and run the app:
+```
+cd commonpage/
+$ npm install 
+$ npm start
+```
+
+## server
+- install dependencies and run the app:
+```
+cd server/
+$ npm install 
+$ npm start
 ```
