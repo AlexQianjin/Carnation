@@ -25,3 +25,6 @@ cd server/
 $ npm install 
 $ npm start
 ```
+
+## Demo
+![gifdemo](/zoiddemo.gif)
