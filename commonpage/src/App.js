@@ -1,5 +1,7 @@
 import React from 'react';
 
+import ProjectLaunch from './ProjectLaunch';
+
 require('es6-promise').polyfill();
 require('isomorphic-fetch');
 
@@ -16,33 +18,10 @@ class App extends React.Component {
         // }
         // console.log(email);
         console.log(this.props.prefilledEmail);
-
-        this.fetchProjectData();
-    }
-
-    fetchProjectData() {
-        fetch('http://localhost:5000/api/v1/project')
-            .then(response => {
-                if (response.status >= 400) {
-                    throw new Error('Bad response from server');
-                }
-                return response.json();
-            })
-            .then(project => {
-                console.log(project);
-                this.setState({ projectName: project.projectName, data: JSON.stringify(project) });
-            });
     }
 
     render() {
-        if(this.state.projectName === '') {
-            return (<div>Loading...</div>);
-        }
-
-        return (<div style={{backgroundColor: '#0f76c7', color: '#fff'}}>
-            <p>{this.state.projectName}</p>
-            <p>{this.state.data}</p>
-        </div>);
+        return (<ProjectLaunch />);
     }
 }
 
