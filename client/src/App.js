@@ -1,15 +1,17 @@
-import React, { Component } from 'react';
+import React, {	Component } from "react";
+import Monitor from "./monitor";
 // import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
-import AppRouter from './AppRouter';
+import AppRouter from "./AppRouter";
 
 class App extends Component {
-  render() {
-    return (
-      <AppRouter />
-    );
-  }
+	componentDidMount() {
+		Monitor();
+	}
+	render() {
+		return <AppRouter /> ;
+	}
 }
 
 export default App;
