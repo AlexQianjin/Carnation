@@ -2,7 +2,7 @@ onmessage = function(e) {
     var getInterval;
     try {
         console.log('Worker: Message received from main script');
-        var params = 'Result: ' + (e.data[0] * e.data[1]);
+        var params = 'Result: ' + (e.data[0]);
         console.log(params);
         function reqListener () {
             postMessage(this.responseText);
@@ -11,9 +11,9 @@ onmessage = function(e) {
         
         var oReq = new XMLHttpRequest();
         oReq.addEventListener("load", reqListener);
-        
+        let url = e.data[0];
         getInterval = setInterval(() => {
-            oReq.open("GET", "http://localhost:5000/api/v1/project");
+            oReq.open("GET", url + "/project");
             oReq.send();
         }, 2 * 1000);
     } catch (error) {
