@@ -7,10 +7,19 @@
   },
   "host": "localhost:5000",
   "schemes": [
-    "http",
-    "https"
+    "http"
   ],
   "basePath": "/api/v1",
+  "tags": [
+    {
+      "name": "User",
+      "description": "Everything about the User"
+    },
+    {
+      "name": "Project",
+      "description": "Everything about the Project"
+    }
+  ],
   "produces": [
     "application/json"
   ],
@@ -25,7 +34,7 @@
         "summary": "Users",
         "description": "The Users endpoint returns information about the Users.\n",
         "tags": [
-          "Users"
+          "User"
         ],
         "responses": {
           "200": {
@@ -34,6 +43,32 @@
               "type": "array",
               "items": {
                 "$ref": "#/definitions/User"
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/project": {
+      "get": {
+        "summary": "Project",
+        "description": "The Project endpoint returns information about the Project.\n",
+        "tags": [
+          "Project"
+        ],
+        "responses": {
+          "200": {
+            "description": "An object of project",
+            "schema": {
+              "type": "object",
+              "items": {
+                "$ref": "#/definitions/Project"
               }
             }
           },
@@ -69,6 +104,51 @@
         "password": {
           "type": "string",
           "description": "Password of user."
+        }
+      }
+    },
+    "Project": {
+      "type": "object",
+      "properties": {
+        "projectName": {
+          "type": "string",
+          "description": "Unique identifier."
+        },
+        "nodes": {
+          "type": "string",
+          "description": "Username of user.",
+          "items": {
+            "$ref": "#/definitions/Node"
+          }
+        }
+      }
+    },
+    "Node": {
+      "type": "object",
+      "properties": {
+        "nodeName": {
+          "type": "string",
+          "description": "Node Name."
+        },
+        "parameters": {
+          "type": "array",
+          "description": "Parameters list.",
+          "items": {
+            "$ref": "#/definitions/Parameter"
+          }
+        }
+      }
+    },
+    "Parameter": {
+      "type": "object",
+      "properties": {
+        "keyName": {
+          "type": "string",
+          "description": "Key Name."
+        },
+        "value": {
+          "type": "string",
+          "description": "Key value."
         }
       }
     },
