@@ -33,6 +33,7 @@
       "get": {
         "summary": "Users",
         "description": "The Users endpoint returns information about the Users.\n",
+        "operationId": "getUsers",
         "tags": [
           "User"
         ],
@@ -59,6 +60,7 @@
       "get": {
         "summary": "Project",
         "description": "The Project endpoint returns information about the Project.\n",
+        "operationId": "getProject",
         "tags": [
           "Project"
         ],
